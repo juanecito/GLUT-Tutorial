@@ -11,38 +11,38 @@ void renderScene(void) {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	//glScalef(0.2, 0.2, 0.2);
+	glScalef(0.2, 0.2, 0.2);
 
-	//glScalef(0.5, 0.5, 0.5);
+	glScalef(0.5, 0.5, 0.5);
 
-	//glTranslatef(-n-1, 0, 0);
-	//for (int i = 0; i < n; i++) {
-	//	glRotatef(45,0,0,1);
-	//	glutWireCube(2);
-	//	glRotatef(-45,0,0,1);
-	//	glTranslatef(2.82,0,0);
-	//}
+	glTranslatef(-n-1, 0, 0);
+	for (int i = 0; i < n; i++) {
+		glRotatef(45,0,0,1);
+		glutWireCube(2);
+		glRotatef(-45,0,0,1);
+		glTranslatef(2.82,0,0);
+	}
 
-	//for (int i = 0; i < n; i++) {
-	//
-	//	glPushMatrix();
+	for (int i = 0; i < n; i++) {
 
-	//	glTranslatef(1.414 *(- n*0.5 + i + 0.5), 0, 0);
-	//	glRotatef(45, 0 ,0 ,1);
-	//	glScalef(0.5, 0.5, 0.5);
-	//	glutWireCube(2);
+		glPushMatrix();
 
-	//	glPopMatrix();
-	//
-	//	glPushMatrix();
+		glTranslatef(1.414 *(- n*0.5 + i + 0.5), 0, 0);
+		glRotatef(45, 0 ,0 ,1);
+		glScalef(0.5, 0.5, 0.5);
+		glutWireCube(2);
 
-	//	glTranslatef(0, 1.414 *(- n*0.5 + i + 0.5), 0);
-	//	glRotatef(45, 0 ,0 ,1);
-	//	glScalef(0.5, 0.5, 0.5);
-	//	glutWireCube(2);
+		glPopMatrix();
 
-	//	glPopMatrix();
-	//}
+		glPushMatrix();
+
+		glTranslatef(0, 1.414 *(- n*0.5 + i + 0.5), 0);
+		glRotatef(45, 0 ,0 ,1);
+		glScalef(0.5, 0.5, 0.5);
+		glutWireCube(2);
+
+		glPopMatrix();
+	}
 
 
 
