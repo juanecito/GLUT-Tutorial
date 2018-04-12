@@ -4,7 +4,7 @@
 
 ################################################################################
 
-LIBS := -lglut -lGL -lGLU
+LIBS := -lglut -lGL -lGLU -lGLEW
 SRC_DIR := source
 SRC_TUTORIAL_DIR := src
 BIN_DIR := bin
