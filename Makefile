@@ -10,6 +10,8 @@ SRC_TUTORIAL_DIR := src
 BIN_DIR := bin
 OBJ_DIR := obj
 
+CXXFLAGS := -g -O0
+
 CCFILES := $(shell ls -1 ./$(SRC_DIR)/*.cpp 2>/dev/null)
 
 ################################################################################
@@ -18,18 +20,18 @@ CCFILES := $(shell ls -1 ./$(SRC_DIR)/*.cpp 2>/dev/null)
 OBJS +=  $(patsubst %.cpp,$(OBJ_DIR)/%.cpp.o,$(notdir $(CCFILES)))
 BINS +=  $(patsubst %.cpp,$(BIN_DIR)/%,$(notdir $(CCFILES)))
 
-all: make_dirs $(BINS) $(BIN_DIR)/section_2
-#all: a-initialization b-reshape c-animation d-keyboard e-thecodesofar \
-	f-thecodesofarII g-thecodesofarIII h-thecodesofarIV i-thecodesofarV \
-	j-thecodesofarVI k-subwindowscode l-thecodesofarVII
+all: make_dirs $(BINS) $(BIN_DIR)/example_1 $(BIN_DIR)/example_2
 
 make_dirs:
 	mkdir -p ./bin
 	mkdir -p ./obj
 
 
-$(BIN_DIR)/section_2: $(SRC_TUTORIAL_DIR)/section_2.cpp
-	$(CXX) $< $(LIBS) -o $@
+$(BIN_DIR)/example_1: $(SRC_TUTORIAL_DIR)/example_1.cpp
+	$(CXX) $< $(LIBS) $(CXXFLAGS) -o $@
+
+$(BIN_DIR)/example_2: $(SRC_TUTORIAL_DIR)/example_2.cpp
+	$(CXX) $< $(LIBS) $(CXXFLAGS) -o $@
 
 $(OBJ_DIR)/%.cpp.o: $(SRC_DIR)/%.cpp
 	$(CXX) $< -c -o $@
